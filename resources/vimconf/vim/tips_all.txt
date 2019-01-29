@@ -1,0 +1,19 @@
+
+Replace on all open buffers
+---------------------------
+
+:bufdo %s/pattern/replace/ge | update
+
+
+Fast insert mode edition examples:
+---------------------------------
+
+* you accidentally typed "accifentally".  No problem, the sequence (Esc)(F)(f)(r)(d)(A) will correct the mistake and bring you back where you've been editing it.  (F)(f) movement will bring you back to the first encountered "f" character.  Compare with (Ctrl)+(<-)(->)(->)(->)(->)(del)(d)(End), that does virtually the same in a casual editor, but takes more keystrokes, makes you move your hand out of alphanumeric space of the keyboard.
+
+* you accidentally typed "you accidentally typed", but want to correct it to "you intentionally typed".  Then (Esc)(2)(b)(c)(w) will erase the word you want to fix and bring you to insert mode, so you can immediately retype it.  To get back to editing, just press (A) instead of (End), to reach which you should move your hand
+
+* you accidentally typed "mouse" instead of "mice".  No problem - the good old (Ctrl)+(W) will delete the previous word without going out from insert mode.  And it happens to be much faster to erase small word than to fix errors in it.  I'm so used to it that I had closed the browser page when I was typing this message...
+
+* repetition count is largely underused.   Before making a movement, you can type a number; and the movement will be repeated this number of times.  For example, (1)(5)(h) will bring you 15 characters back and (4)(j)  will scroll you 4 lines down.  Start using them and you'll get used soon and find out that pressing 10 times (<-) key is less fast than iterative approach to moving cursor, when you type (1)(2)(h), notice that you made a mistake and immediately correct yourself with (l)(l).
+
+

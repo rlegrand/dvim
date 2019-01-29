@@ -1,0 +1,48 @@
+1) Cut / Copy all lines containing a pattern
+:g/toto/d A
+Use the "global" command
+:g/pattern/command
+
+- Cut lines containing pattern toto and add them to register a:
+:g/toto/d A
+then paste where you want:
+"ap
+
+- To copy them instead:
+:g/toto/c A
+
+- Isolate lines based on a pattern in a new buffer
+
+:w
+:vimgrep /pattern/ %
+:copen
+
+2) Search your pattern: /toto
+
+Make your modif: delete, change or whatever
+Go to next occurent: n
+Repeat last action: .
+
+3) Using gn
+Search your pattern: /toto
+Using gn will search and select the first occurence you want to modify
+gn can be prefixed by a command, for example 'c' to change, or 'd' to delete, or gU to uppercase 
+
+Examples:
+- Remove some  patterns toto from the file:
+/toto
+dgn (remove the first occurence)
+. (remove the second)
+n (skip the next one, the third)
+. (remove the third)
+
+- Change some patterns toto from the file:
+/toto
+cgn (then insert your new value, so first occurence changed)
+. (repeat action on next occurence)
+n (skip next occurent)
+. (repeat action on next occurence)
+
+- Uppercase some patterns:
+Same mechanism than previous examples, juste use gUgn instead
+

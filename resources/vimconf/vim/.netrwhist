@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='C:/more/work_int/projects/sources/spacewalk-upgrade/project/logrotate'
+let g:netrw_dirhist_2='C:/more/work_int/projects/sources/spacewalk-upgrade'
+let g:netrw_dirhist_3='C:/more/work_int/projects/sources/spacewalk-upgrade/project'
+let g:netrw_dirhist_4='C:/more/work_int/projects/sources/spacewalk-upgrade/project/.git'
+let g:netrw_dirhist_5='C:/more/work_int/projects/sources/spacewalk-upgrade'
+let g:netrw_dirhist_6='C:/more/work_int/projects/sources/spacewalk-upgrade/project/logrotate'
+let g:netrw_dirhist_7='C:\more\work_int\projects\sources\spacewalk-upgrade\project\logrotate'
+let g:netrw_dirhist_8='C:/more/work_int/projects/sources/spacewalk-upgrade/project'

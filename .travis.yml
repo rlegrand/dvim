@@ -1,0 +1,11 @@
+services:
+  - docker
+
+branches:
+  only:
+    - master
+
+script:
+  - docker build . -t rlegrand/dvim
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push rlegrand/dvim:latest
