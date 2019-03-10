@@ -29,7 +29,7 @@ Add dgit to your path, on linux you may do:
 
     echo "export PATH=${PATH}:~/.dvim/bin/" >> ~/.bashrc
 
-Then use mvim as you would use vim
+Then use dvim as you would use vim
    
 
 # todo
