@@ -1,5 +1,5 @@
 #!  /bin/bash
 
 chmod 400 ~/.dvim/resources/ssh/keys/id_rsa
-docker run --rm -d -v "$(pwd)":/app -p 2222:22 -w /app -it rlegrand/mvim
+docker run --rm -d -v "$(pwd)":/app -p 2222:22 -w /app -it rlegrand/dvim
 ssh -o StrictHostKeyChecking=false root@localhost -i ~/.dvim/resources/ssh/keys/id_rsa -p 2222 -t "cd /app && vim $*"
