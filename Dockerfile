@@ -1,5 +1,7 @@
 from centos:7
 
+LABEL description=https://github.com/rlegrand/dvim
+
 ENV HOME /root
 # Add node repo
 RUN curl -sL https://rpm.nodesource.com/setup_11.x | bash -
