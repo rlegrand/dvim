@@ -22,7 +22,7 @@ Be sure you have ssh, bash and docker.
 
 Clone this repo and retrieve docker image
 
-    git clone https://github.com/rlegrand/beets-webapp.git ~/.dvim
+    git clone https://github.com/rlegrand/dvim ~/.dvim
     docker pull rlegrand/dvim
     
 Add dgit to your path, on linux you may do:
