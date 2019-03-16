@@ -139,6 +139,8 @@ function! SetFzf()
   if !has('win32') && !has('win64')
     set rtp+=~/.fzf
     noremap <C-p> :FZF<cr>
+	command! FZFexclude call fzf#run({'source': 'find . \! \( -type d \( -path "*.git*" -o -path "*/node_modules/*" \) -prune \)', 'sink': 'e', 'down':'30%'})
+    noremap <C-p> :FZFexclude<cr>
   endif
 endfunction
 

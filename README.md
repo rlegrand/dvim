@@ -20,6 +20,8 @@ That's why I did this minimal project to get vi working on any system where bash
 
 Be sure you have ssh, bash and docker.
 
+## Install
+
 Clone this repo and retrieve docker image
 
     git clone https://github.com/rlegrand/dvim ~/.dvim
@@ -30,6 +32,11 @@ Add dgit to your path, on linux you may do:
     echo "export PATH=${PATH}:~/.dvim/bin/" >> ~/.bashrc
 
 Then use dvim as you would use vim
+
+## Update
+
+    cd ~/.dvim && git pull
+    docker pull rlegrand/dvim
    
 
 # todo
