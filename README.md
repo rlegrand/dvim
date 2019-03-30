@@ -27,7 +27,7 @@ Clone this repo and retrieve docker image
     git clone https://github.com/rlegrand/dvim ~/.dvim
     docker pull rlegrand/dvim
     
-Add dgit to your path, on linux you may do:
+Add dvim to your path, on linux you may do:
 
     echo "export PATH=${PATH}:~/.dvim/bin/" >> ~/.bashrc
 
@@ -36,7 +36,7 @@ Then use dvim as you would use vim
 ## Update
 
     cd ~/.dvim && git pull
-    docker pull rlegrand/dvim
+    docker pull -f rlegrand/dvim
    
 
 # todo

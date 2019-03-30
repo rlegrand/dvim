@@ -88,7 +88,6 @@ else
 endif " has("autocmd")
 
 
-
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
@@ -114,15 +113,28 @@ function! SetLook()
   hi CursorLine term=bold cterm=bold guibg=Grey20
   hi CursorLineNr term=bold cterm=bold guibg=Grey40
   hi LineNr ctermfg=DarkGrey guifg=#2b506e guibg=#000000
+  hi Folded ctermfg=Grey ctermbg=DarkGrey guifg=#aaaaaa guibg=#555555
 endfunction
 
+" tabulation/indentation
 function! SetIndent()
-  " tabulation/indentation
-  set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
+  augroup expandtabFTW
+    autocmd!
+    set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
+  augroup END
 endfunction
 
+" folding
+function SetFolding()
+  " Folding
+  set foldmethod=syntax foldlevelstart=99
+  "  -> dont unlaod/reload while switchingbuffers
+  "  -> Which also allows to keep folds status
+  set hidden 
+endfunction
+
+" NERDTree
 function! SetNerdConf()
-  " NERDTree
   noremap <C-e> :NERDTree<cr>
 endfunction
 
@@ -136,10 +148,9 @@ function! SetTypescriptConf()
 endfunction
 
 function! SetFzf()
-  if !has('win32') && !has('win64')
+  if !has('win32') && !has('win64') && exists(":FZF")
     set rtp+=~/.fzf
-    noremap <C-p> :FZF<cr>
-	command! FZFexclude call fzf#run({'source': 'find . \! \( -type d \( -path "*.git*" -o -path "*/node_modules/*" \) -prune \)', 'sink': 'e', 'down':'30%'})
+    command! FZFexclude call fzf#run({'source': 'find . \! \( -type d \( -path "*.git*" -o -path "*/node_modules/*" \) -prune \)', 'sink': 'e', 'down':'30%'})
     noremap <C-p> :FZFexclude<cr>
   endif
 endfunction
@@ -157,6 +168,7 @@ endfunction
 call SetTips()
 call SetLook()
 call SetIndent()
+call SetFolding()
 call SetNerdConf()
 call SetTypescriptConf()
 call SetFzf()

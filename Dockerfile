@@ -15,6 +15,9 @@ RUN make install
 # Install fzf
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git ${HOME}/.fzf
 RUN ${HOME}/.fzf/install --all
+#Remove useless packages
+RUN yum remove -y git ncurses-devel gcc-c++ make
+RUN yum -y autoremove;
 # Use custom vim conf
 ADD resources/vimconf/vim ${HOME}/.vim
 ADD resources/vimconf/_vimrc ${HOME}/.vimrc
