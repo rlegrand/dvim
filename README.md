@@ -36,7 +36,7 @@ Then use dvim as you would use vim
 ## Update
 
     cd ~/.dvim && git pull
-    docker pull -f rlegrand/dvim
+    docker pull rlegrand/dvim
    
 
 # todo
