@@ -148,7 +148,7 @@ function! SetTypescriptConf()
 endfunction
 
 function! SetFzf()
-  if !has('win32') && !has('win64') && exists(":FZF")
+  if !has('win32') && !has('win64') && filereadable(expand("~/.fzf/bin/fzf"))
     set rtp+=~/.fzf
     command! FZFexclude call fzf#run({'source': 'find . \! \( -type d \( -path "*.git*" -o -path "*/node_modules/*" \) -prune \)', 'sink': 'e', 'down':'30%'})
     noremap <C-p> :FZFexclude<cr>

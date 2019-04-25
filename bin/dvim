@@ -1,6 +1,11 @@
 #!  /bin/bash
 
 chmod 400 ~/.dvim/resources/ssh/keys/id_rsa
-docker run --rm -d -v "$(pwd)":/$(pwd) -p 2222:22 -w /app rlegrand/dvim
+
+#VIMRC_VOLUME="-v "\""${HOME}/.dvim/resources/vimconf/_vimrc:/root/.vimrc"\"
+VIMRC_VOLUME="-v ${HOME}/.dvim/resources/vimconf/_vimrc:/root/.vimrc"
+VIMFILES_VOLUME="-v ${HOME}/.dvim/resources/vimconf/vim/:/root/.vim"
+
+docker run --rm -d -v "$(pwd)":/$(pwd) ${VIMRC_VOLUME} ${VIMFILES_VOLUME} -p 2222:22 -w /app rlegrand/dvim
 sleep 0.3
-ssh -o StrictHostKeyChecking=false root@localhost -i ~/.dvim/resources/ssh/keys/id_rsa -p 2222 -t "cd $(PWD) && vim $*"
+ssh -o StrictHostKeyChecking=false root@localhost -i ~/.dvim/resources/ssh/keys/id_rsa -p 2222 -t "cd ${PWD} && vim $*"
